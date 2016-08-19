@@ -1,36 +1,34 @@
 {
-  "name": "cordova-plugin-calendar-fork",
-  "version": "1.0.0",
-  "description": "This plugin allows you to manipulate the native calendar.",
-  "cordova": {
-    "id": "cordova-plugin-calendar-fork",
-    "platforms": [
-      "ios",
-      "android"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/btourman/Calendar-PhoneGap-Plugin.git"
-  },
-  "keywords": [
-    "Calendar",
-    "Agenda",
-    "Event",
-    "ecosystem:cordova",
-    "cordova-ios",
-    "cordova-android"
-  ],
-  "engines": [
-    {
-      "name": "cordova",
-      "version": ">=3.0.0"
-    }
-  ],
-  "author": "Benjamin Tourman <tourman.benjamin@gmail.com> (https://github.com/btourman)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/btourman/Calendar-PhoneGap-Plugin/issues"
-  },
-  "homepage": "https://github.com/btourman/Calendar-PhoneGap-Plugin#readme"
+    "name": "cordova-plugin-calendar-fork",
+    "version": "1.0.2",
+    "description": "This plugin allows you to manipulate the native calendar.",
+    "cordova": {
+        "id": "cordova-plugin-calendar-fork",
+        "platforms": [
+            "ios",
+            "android"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/btourman/Calendar-PhoneGap-Plugin.git"
+    },
+    "keywords": [
+        "Calendar",
+        "Agenda",
+        "Event",
+        "ecosystem:cordova",
+        "cordova-ios",
+        "cordova-android"
+    ],
+    "engines": [{
+        "name": "cordova",
+        "version": ">=3.0.0"
+    }],
+    "author": "Benjamin Tourman <tourman.benjamin@gmail.com> (https://github.com/btourman)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/btourman/Calendar-PhoneGap-Plugin/issues"
+    },
+    "homepage": "https://github.com/btourman/Calendar-PhoneGap-Plugin#readme"
 }
