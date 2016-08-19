@@ -181,7 +181,7 @@ public abstract class AbstractCalendarAccessor {
                                                 String[] projection, String selection, String[] selectionArgs,
                                                 String sortOrder);
 
-  private Event[] fetchEventInstances(String title, String location, long startFrom, long startTo) {
+  private Event[] fetchEventInstances(String title, String location, long startFrom, long startTo, String calendarId) {
     String[] projection = {
         this.getKey(KeyIndex.INSTANCES_ID),
         this.getKey(KeyIndex.INSTANCES_EVENT_ID),
@@ -207,6 +207,14 @@ public abstract class AbstractCalendarAccessor {
       }
       selection += Events.EVENT_LOCATION + " LIKE ?";
       selectionList.add("%" + location + "%");
+    }
+
+    if (calendarId != null && !calendarId.equals("")) {
+      if (!"".equals(selection)) {
+        selection += " AND ";
+      }
+      selection += Events.CALENDAR_ID + "= ?";
+      selectionList.add(calendarId);
     }
 
     String[] selectionArgs = new String[selectionList.size()];
@@ -386,10 +394,10 @@ public abstract class AbstractCalendarAccessor {
     return attendeeMap;
   }
 
-  public JSONArray findEvents(String title, String location, long startFrom, long startTo) {
+  public JSONArray findEvents(String title, String location, long startFrom, long startTo, String calendarId) {
     JSONArray result = new JSONArray();
     // Fetch events from the instance table.
-    Event[] instances = fetchEventInstances(title, location, startFrom, startTo);
+    Event[] instances = fetchEventInstances(title, location, startFrom, startTo, calendarId);
     if (instances == null) {
       return result;
     }
